@@ -1,6 +1,7 @@
 # Card.rb
 
 class Card
+  # This @@numcards will keep adding up everytime the class is initiated => you know the number of cards initiated int he deck
   @@numcards = 0
   MAX_VALUE = 13
   MIN_VALUE = 1
@@ -9,9 +10,10 @@ class Card
     @value = value
     @suit  = suit
     @@numcards += 1
-    # MAX_VALUE = 37
+    MAX_VALUE = 78
   end
 
+  # This class method is essentially a reader method
   def self.numcards
     return @@numcards
   end

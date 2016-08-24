@@ -9,10 +9,31 @@ class Ghost
     $dead # this is bad
   end
 
+  def makeAlive()
+    $dead = false
+  end
+
 end
 
+ghost2 = Ghost.new()
 ghost1 = Ghost.new()
 puts "Is ghost1 Dead #{ghost1.is_dead?}"
+ghost1.makeAlive
+puts "Is ghost1 Dead #{ghost1.is_dead?}"
+# By making the global $dead variable true, we made everyone alive
+puts "Is ghost2 Dead #{ghost2.is_dead?}\n"
+
+# EX: Internal global variables for ruby
+puts ARGV # THis allows you to put an arvument in from the command line
+# ARGV is the same as $*
+puts ARGV.length
+  # ruby GlobalVariables.rb hello test
+  # => hello
+  # => 2
+ap ARGV
+
+puts $$ # or Process.pid The process number of the Ruby running this script.
+
 
 # Test if debug is on:
 #puts $-d
